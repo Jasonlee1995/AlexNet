@@ -2,12 +2,25 @@
 
 
 ## 0. Develop Environment
-- Docker Image : tensorflow/tensorflow:1.13.2-gpu-py3-jupyter
-- Pytorch : Stable (1.5) - Linux - Python - CUDA (10.2)
+```
+numpy == 1.17.2
+scipy == 1.3.1
+torch == 1.5.1 + cu101
+Pillow == 6.2.2
+lmdb == 0.97
+opencv-python == 3.4.1.15
+cryptography == 2.9.2
+h5py == 2.7
+six == 1.12.0
+```
+- Pytorch : Stable (1.5) - Linux - Python - CUDA (10.1)
 - Using Single GPU (not tested on cpu only)
 
 
 ## 1. Explain about Implementation
+- model.py : alexnet
+- train.py : train model
+- utils.py : count right prediction, save checkpoints
 
 
 ## 2. Brief Summary of *'ImageNet Classification with Deep Convolutional Neural Networks'*
