@@ -18,7 +18,7 @@ six == 1.12.0
 
 
 ## 1. Explain about Implementation
-- Cause of 32*32 vanish during train and test, resize images to 64*64
+- Cause of vanishing input image on train and test, resize input images (32 x 32 -> 64 x 64)
 - model.py : alexnet
 - train.py : train model
 - utils.py : count right prediction, save checkpoints
