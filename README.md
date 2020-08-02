@@ -19,6 +19,7 @@ six == 1.12.0
 
 ## 1. Explain about Implementation
 - Cause of vanishing input image on train and test, resize input images (32 x 32 -> 64 x 64)
+- Use batch normalization instead of local response normalization and apply before ReLU
 - model.py : alexnet
 - train.py : train model
 - utils.py : count right prediction, save checkpoints
@@ -57,15 +58,15 @@ six == 1.12.0
 |ReLU|-|-|-|
 |LRN|-|-|-|
 |Pool1|3 * 3, 2, -|96 * 55 * 55|96 * 27 * 27|
-|Conv2|5 * 5, 1, 2|96 * 27 * 27|256 * 27 * 27|
+|2 Group Conv2|5 * 5, 1, 2|96 * 27 * 27|256 * 27 * 27|
 |ReLU|-|-|-|
 |LRN|-|-|-|
 |Pool2|3 * 3, 2, -|256 * 27 * 27|256 * 13 * 13|
 |Conv3|3 * 3, 1, 1|256 * 13 * 13|384 * 13 * 13|
 |ReLU|-|-|-|
-|Conv4|3 * 3, 1, 1|384 * 13 * 13|384 * 13 * 13|
+|2 Group Conv4|3 * 3, 1, 1|384 * 13 * 13|384 * 13 * 13|
 |ReLU|-|-|-|
-|Conv5|3 * 3, 1, 1|384 * 13 * 13|256 * 13 * 13|
+|2 Group Conv5|3 * 3, 1, 1|384 * 13 * 13|256 * 13 * 13|
 |ReLU|-|-|-|
 |Pool3|3 * 3, 2, -|256 * 13 * 13|256 * 6 * 6|
 |FC1|-|256 * 6 * 6|4096|
@@ -75,7 +76,7 @@ six == 1.12.0
 |FC3|-|4096|1000|
 
 - Pooling layer : Max Pooling
-- LRN : local response normalization]
+- LRN : local response normalization
 
 ### 2.5. Classification Task
 #### 2.5.1. Train  
