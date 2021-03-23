@@ -21,8 +21,8 @@ Library
 - Visualize - Kernel.ipynb : visualize the first conv layer
 - Details
   * Same batch size, learning rate, learning rate scheduler as paper
-  * No LRN on AlexNet model
-  * No Augmentation using PCA
+  * No LRN on AlexNet model (by experiment on CIFAR 10, LRN decreases performance)
+  * No augmentation using PCA
   * Different network initialization strategy as paper
   * Different image pre-processing as paper
 
