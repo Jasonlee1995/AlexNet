@@ -22,13 +22,11 @@ class AlexNet():
         self.train_acc = []
         self.test_losses = []
         self.test_acc = []
-        self.lrs = []
         self.best_acc = 0
 
     def train(self, train_data, test_data, save, epochs, lr, momentum, weight_decay):
         self.model.train()
         optimizer = optim.SGD(self.model.parameters(), lr, momentum=momentum, weight_decay=weight_decay)
-        scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer)
         
         for epoch in range(epochs):
             if epoch % self.epoch_print == 0: print('Epoch {} Started...'.format(epoch+1))
@@ -49,8 +47,6 @@ class AlexNet():
                     self.train_acc.append(train_acc)
                     self.test_losses.append(test_loss)
                     self.test_acc.append(test_acc)
-                    for param_group in optimizer.param_groups:
-                        self.lrs.append(param_group['lr'])
 
                     if epoch % self.epoch_print == 0:
                         state = ('Iteration : {} - Train Loss : {:.4f}, Test Loss : {:.4f}, '
@@ -64,7 +60,6 @@ class AlexNet():
                                 torch.save(self.model.state_dict(), './best.pt')
                                 print('Saved Best Model')
                         else: print(state)
-            scheduler.step(test_loss)
 
     def test(self, test_data):
         correct, total = 0, 0
