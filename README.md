@@ -20,11 +20,11 @@ Library
 - AlexNet - CIFAR 10.ipynb : install library, download dataset, preprocessing, train and result
 - Visualize - Kernel.ipynb : visualize the first conv layer
 - Details
-  * Same batch size, learning rate, learning rate scheduler as paper
-  * No LRN on AlexNet model (by experiment on CIFAR 10, LRN decreases performance)
+  * Follow ImaegNet train details : batch size 128, learning rate 0.01, momentum 0.9, weight decay 0.0005
+  * No learning rate scheduler for convenience
   * No augmentation using PCA
   * Different network initialization strategy as paper
-  * Different image pre-processing as paper
+  * Different image pre-processing as paper (use CIFAR 10 statistics)
 
 
 ## 2. Reference
