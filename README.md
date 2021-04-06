@@ -17,7 +17,7 @@ Library
 - model.py : AlexNet model
 - train.py : train AlexNet (include 10-crop on val/test)
 - utils.py : count correct prediction
-- AlexNet - CIFAR 10.ipynb : install library, download dataset, preprocessing, train and result
+- AlexNet - Cifar 10.ipynb : install library, download dataset, preprocessing, train and result
 - Visualize - Kernel.ipynb : visualize the first conv layer
 - Details
   * Follow ImaegNet train details : batch size 128, learning rate 0.01, momentum 0.9, weight decay 0.0005
