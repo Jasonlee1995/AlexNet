@@ -27,5 +27,13 @@ Library
   * Different image pre-processing as paper (use CIFAR 10 statistics)
 
 
-## 2. Reference
+## 2. Result Comparison on CIFAR-10
+|Source|Score|Detail|
+|:-:|:-:|:-|
+|Paper|0.87|without normalization|
+|Paper|0.89|with normalization|
+|Current Repo|0.8947|with normalization|
+
+
+## 3. Reference
 - ImageNet Classification with Deep Convolutional Neural Networks [[paper]](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
