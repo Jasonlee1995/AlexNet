@@ -30,9 +30,9 @@ Library
 ## 2. Result Comparison on CIFAR-10
 |Source|Score|Detail|
 |:-:|:-:|:-|
-|Paper|0.87|without normalization|
-|Paper|0.89|with normalization|
-|Current Repo|0.8947|with normalization|
+|Paper|87|without normalization|
+|Paper|89|with normalization|
+|Current Repo|89.47|with normalization|
 
 
 ## 3. Reference
